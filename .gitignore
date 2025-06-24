@@ -1,0 +1,17 @@
+# Python files
+*.pyc
+__pycache__/
+venv/
+env/
+
+# Secret keys
+config.json
+planetscale-cert.pem
+
+# Uploads
+/static/uploads/*
+
+# PyCharm and OS files
+.idea/
+.DS_Store
+Thumbs.db

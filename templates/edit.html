@@ -1,0 +1,87 @@
+{% extends "layout.html" %} 
+{% block body %}
+        <!-- Page Header-->
+        <header class="masthead" style="background-image: url('{{ url_for('static', filename = 'img/home-bg.jpg') }}')">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="site-heading">
+                            <h1>Admin Panel</h1>
+                            <span class="subheading">Manage your posts here</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+       {% if messages %}
+       {% for category, message in messages  %}
+
+       <div class="alert alert-{{category}} alert-dismissible fade show" role="alert">
+            <strong>{{message}}</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+
+        {% endfor %}
+       {% endif %}
+       {% endwith %}
+
+        <!-- Main Content-->
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+
+    <h1>Basic Actions</h1>
+    <a href="/edit/0"><button class="btn btn-primary rounded-pill"> Dashboard </button></a> 
+    <a href="/logout"><button class="btn btn-primary rounded-pill"> Logout </button></a> <hr>
+
+ <h1>Add/Edit Post</h1>
+
+ <form id="contactForm" data-sb-form-api-token="API_TOKEN" action="/edit/{{sno}}" method="post">
+                                <div class="form-floating">
+                                    <input class="form-control" id="title" type="text" name = 'title' placeholder="Title" value="{{post.title}}" />
+                                    <label >Title</label>
+                                    <div class="invalid-feedback" data-sb-feedback="name:required">Title</div>
+                                </div>
+                                <div class="form-floating">
+                                    <input class="form-control" id="slug" type="text" name = 'slug' placeholder="Enter your email..." value="{{post.slug}}" />
+                                    <label >Slug</label>
+                                </div>
+                            
+                                <div class="form-floating">
+                                    <input class="form-control" id="content" name = 'content' placeholder="Enter your content here..." style="height: 12rem" data-sb-validations="required" value="{{post.content}}"></input>
+                                    <label>Content</label>
+                                </div>
+                                <div class="form-floating">
+                                    <input class="form-control" id="img_file" name = 'img_file' placeholder="Enter your image here..." style="height: 12rem" value="{{post.img_file}}"></input>
+                                    <label >Image File</label>
+                                </div>
+                                <br />
+                                <!-- Submit success message-->
+                                <!---->
+                                <!-- This is what your users will see when the form-->
+                                <!-- has successfully submitted-->
+                                <div class="d-none" id="submitSuccessMessage">
+                                    <div class="text-center mb-3">
+                                        <div class="fw-bolder">Form submission successful!</div>
+                                        To activate this form, sign up at
+                                        <br />
+                                        <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
+                                    </div>
+                                </div>
+                                <!-- Submit error message-->
+                                <!---->
+                                <!-- This is what your users will see when there is-->
+                                <!-- an error submitting the form-->
+                                <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
+                                <!-- Submit Button-->
+                                <button class="btn btn-primary text-uppercase rounded-pill" id="submitButton" type="submit">Send</button>
+                            </form>
+ 
+
+                   
+                </div>
+            </div>
+        </div>
+{% endblock %} 
