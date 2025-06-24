@@ -1,0 +1,21 @@
+{
+  "params":
+  {
+    "local_server": "True",
+    "local_uri": "mysql://root:@localhost/coderaid",
+    "prod_uri": "mysql+pymysql://username:password@host/dbname",
+    "in_url": "https://instagram.com/kauuntalha_",
+    "tw_url": "https://twitter.com/kauuntalha",
+    "gh_url": "https://github.com/talharajput302",
+    "blog_name": "The Code Raid",
+    "tag_line": "A Blog Liked By Programmers",
+    "gmail-user": "thecoderaid@gmail.com",
+    "gmail-password": "cwrm ergm omcz iyji",
+    "about_text": "Hi, I'm Talha Ahmed, a passionate Full Stack Developer who creates dynamic websites, custom web applications, and powerful backend systems. I specialize in building responsive, user-friendly digital experiences using modern technologies. From designing clean and interactive frontends to developing secure and efficient server-side logic, I enjoy turning ideas into functional, real-world solutions. This blog is where I share my thoughts, experiences, and knowledge about web development, technology, and the journey of building impactful software. If you would like to connect, collaborate, or just have a chat, feel free to reach out. I would love to hear from you.",
+    "num_of_posts": 2,
+    "login_image": "login.svg",
+    "admin_user": "coderaider",
+    "admin_password": "user098123",
+    "upload_location": "C:\\Users\\thinkpad\\OneDrive\\Desktop\\Flask\\static\\img"
+  }
+}
