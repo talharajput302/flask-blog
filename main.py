@@ -12,7 +12,7 @@ import math
 with open('config.json', 'r') as c:
     params = json.load(c)['params']
 
-local_server = os.environ.get('LOCAL_SERVER') == 'True'
+local_server = 'True'
 app = Flask(__name__)
 app.secret_key = 'super-secret-key'
 app.config['UPLOAD_FOLDER'] = params['upload_location']
@@ -179,7 +179,8 @@ def contact():
     return render_template('contact.html', params = params)
 
 
-
+if __name__ == '__main__':
+    app.run(debug=True)
 
 
 
